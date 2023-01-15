@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+         <!-- <defaults autowire="true" autoconfigure="true"/> -->
+         <!-- <service id="KnpU\LoremIpsomeBundle\KnpUIpsum" class="KnpU\LoremIpsomeBundle\KnpUIpsum" public="true" autowire="true"/> -->
+
+        <service id="knpu_lorem_ipsum.knpu_ipsome" class="KnpU\LoremIpsomeBundle\KnpUIpsum" public="true" autowire="true">
+            <argument type="service" id="knpu_lorem_ipsum.word_provider" />
+        </service>  
+        <service id="KnpU\LoremIpsomeBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsome" public="true" />
+
+        <!-- use ase typw hinting -->
+        <service id="KnpU\LoremIpsumBundle\KnpuWordProvider" class="KnpU\LoremIpsumBundle\KnpuWordProvider" public="true" />
+        <!-- create word provider service id -->
+        <service id="knpu_lorem_ipsum.word_provider" class="KnpU\LoremIpsumBundle\KnpuWordProvider" public="true" />
+        <service id="KnpU\LoremIpsumBundle\KnpuWordProvider" alias="knpu_lorem_ipsum.word_provider" public="true" />
+
+
+
+    </services>
+</container>

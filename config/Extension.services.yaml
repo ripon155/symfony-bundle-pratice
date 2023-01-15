@@ -1,0 +1,10 @@
+services:
+  app.twig_extensiona:
+    class: App\Twig\Extension\AppExtension
+    tags:
+      -{name: twig.extension }
+      
+  app.twig_runtime:
+    class: App\Twig\Runtime\AppExtensionRuntime
+    tags:
+      -{name: twig.runtime }
